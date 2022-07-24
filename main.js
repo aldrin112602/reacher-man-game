@@ -12,11 +12,11 @@ window.addEventListener("load",
 		var level = 1;
 		var life = 5;
 		//random color 
-		const randomIntFromInterval = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
+		const rand = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 		
 		//enemies
 		var enemies = [{
-				x: randomIntFromInterval(50, 500), //x coordinate
+				x: rand(50, 500), //x coordinate
 				y: 100, //y coordinate
 				speedY: 1, //speed in Y
 				w: 50, //width
@@ -93,15 +93,20 @@ window.addEventListener("load",
 				player.x = 10;
 				player.y = GAME_HEIGHT - 50;
 				player.isMoving = false;
+				
 				if(enemies.length < 10) {
-				  enemies.push({
-	    			x: randomIntFromInterval(200, 500),
-	    			y: randomIntFromInterval(0, 100),
-		    		speedY: 2,
-		    		w: randomIntFromInterval(30, 50),
-		    		h: 40
-	     		})
+				  enemies.splice(0, rand(1, 2));
+			    	for(var i = 0; i < rand(2, 5); i++) {
+				      enemies.push({
+	    		      	x: rand(200, 500),
+	    		      	y: rand(0, 100),
+		    	      	speedY: 2,
+		    	      	w: rand(30, 50),
+		    	       	h: 40
+	     	      	})
+			    	}
 				}
+			
 				
 				for (var i = 0; i < enemies
 					.length; i++) {
