@@ -1,0 +1,41 @@
+    * {
+      -webkit-user-select: none;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 100vh;
+      width: 100%;
+    }
+    canvas {
+      width: 100%;
+      box-shadow: 2px 3px 10px rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    div {
+      width:  100%;
+      display: flex;
+      align-items: center; 
+      justify-content: space-between;
+      padding: 20px;
+    }
+    div img {
+      width: 50px;
+      height: 80px;
+      pointer-events: none;
+    }
+    div button {
+      border-radius: 20px;
+      outline: none;
+      border: 2px solid green;
+      overflow:hidden;
+    }
+    div button:hover {
+      opacity: 0.7;
+    }
